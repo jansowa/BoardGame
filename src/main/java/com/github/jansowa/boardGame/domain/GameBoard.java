@@ -9,7 +9,7 @@ public abstract class GameBoard {
 	private String name;
 	private int[] fields;
 	private int numberOfPlayers;
-	private int player; //actual player
+	private int player; //current player
 	
 	public GameBoard(){
 		this.name = "";

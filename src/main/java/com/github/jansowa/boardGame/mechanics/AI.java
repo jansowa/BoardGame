@@ -5,6 +5,10 @@ import com.github.jansowa.boardGame.domain.GameBoard;
 public abstract class AI {
 	private GameBoard board;
 	
+	public AI(GameBoard board){
+		this.board = board;
+	}
+	
 	public void setBoard(GameBoard board){
 		this.board = board;
 	}

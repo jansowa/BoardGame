@@ -28,7 +28,9 @@ public abstract class BoardMechanics {
 	
 	//function returns status of game (draw/win/not end)
 	public int singleMove(String field){
-		changeBoard(field);
+		if(isMovePossible(field)){
+			changeBoard(field);
+		}
 		return isGameOver();
 	};
 

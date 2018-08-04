@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 
 @Entity
 @MappedSuperclass
-@Component
 public abstract class GameBoard implements Cloneable{
 	@Id
 	private String name;

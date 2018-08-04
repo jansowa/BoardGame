@@ -2,10 +2,12 @@ package com.github.jansowa.boardGame.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
 import org.springframework.stereotype.Component;
 
 @Entity
+@MappedSuperclass
 @Component
 public abstract class GameBoard implements Cloneable{
 	@Id

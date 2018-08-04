@@ -3,8 +3,11 @@ package com.github.jansowa.boardGame.domain;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import org.springframework.stereotype.Component;
+
 @Entity
-public abstract class GameBoard {
+@Component
+public abstract class GameBoard implements Cloneable{
 	@Id
 	private String name;
 	private int[] fields;
@@ -55,6 +58,13 @@ public abstract class GameBoard {
 
 	public void setPlayer(int player) {
 		this.player = player;
+	}
+	
+	@Override
+	public Object clone() throws CloneNotSupportedException{
+		GameBoard cloned = (GameBoard) super.clone();
+		cloned.setFields(cloned.getFields().clone());
+		return cloned;
 	}
 
 }

@@ -16,5 +16,5 @@ public abstract class AI {
 		return this.board;
 	}
 	
-	abstract public String nextAIMove();
+	abstract public Move nextAIMove();
 }

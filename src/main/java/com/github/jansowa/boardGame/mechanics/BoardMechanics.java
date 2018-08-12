@@ -27,18 +27,18 @@ public abstract class BoardMechanics {
 	public abstract void restartBoard();
 	
 	//function returns status of game (draw/win/not end)
-	public int singleMove(String field){
-		if(isMovePossible(field)){
-			changeBoard(field);
+	public int singleMove(Move move){
+		if(isMovePossible(move)){
+			changeBoard(move);
 		}
 		return isGameOver();
 	};
 
 	//function makes changes on board of single move
-	public abstract void changeBoard(String field);
+	public abstract void changeBoard(Move move);
 
 	//function return status of game (draw/win/not end)
 	public abstract int isGameOver();
 	
-	public abstract boolean isMovePossible(String field);
+	public abstract boolean isMovePossible(Move move);
 }

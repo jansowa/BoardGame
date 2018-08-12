@@ -3,7 +3,6 @@ com/github/jansowa/boardGame/mechanics/Move.class
 com/github/jansowa/boardGame/controller/GameController.class
 com/github/jansowa/boardGame/mechanics/BoardMechanics.class
 com/github/jansowa/boardGame/domain/GameBoard.class
-com/github/jansowa/boardGame/mechanics/AppConfiguration.class
 com/github/jansowa/boardGame/mechanics/AI.class
 com/github/jansowa/boardGame/mechanics/GameDAO.class
 com/github/jansowa/boardGame/mechanics/GameStarter.class

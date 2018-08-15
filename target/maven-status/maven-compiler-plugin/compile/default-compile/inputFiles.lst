@@ -1,5 +1,8 @@
 /home/sufka/workspace/BoardGameNewMove/src/main/java/com/github/jansowa/boardGame/mechanics/GameDAO.java
 /home/sufka/workspace/BoardGameNewMove/src/main/java/com/github/jansowa/boardGame/mechanics/BoardMechanics.java
 /home/sufka/workspace/BoardGameNewMove/src/main/java/com/github/jansowa/boardGame/domain/GameBoard.java
+/home/sufka/workspace/BoardGameNewMove/src/main/java/com/github/jansowa/boardGame/mechanics/Coordinates.java
 /home/sufka/workspace/BoardGameNewMove/src/main/java/com/github/jansowa/boardGame/controller/GameController.java
 /home/sufka/workspace/BoardGameNewMove/src/main/java/com/github/jansowa/boardGame/mechanics/AI.java
+/home/sufka/workspace/BoardGameNewMove/src/main/java/com/github/jansowa/boardGame/mechanics/GameStarter.java
+/home/sufka/workspace/BoardGameNewMove/src/main/java/com/github/jansowa/boardGame/mechanics/Move.java

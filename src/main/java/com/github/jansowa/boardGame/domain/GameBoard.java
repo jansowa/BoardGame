@@ -1,11 +1,10 @@
 package com.github.jansowa.boardGame.domain;
 
-import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+
 
 @MappedSuperclass
 public abstract class GameBoard implements Cloneable {
-	@Id
 	private String name;
 	private int[][] fields;
 	private int numberOfPlayers;

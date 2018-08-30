@@ -1,11 +1,12 @@
-package com.github.jansowa.boardGame.mechanics;
+package com.github.jansowa.boardGame.ai;
 
 import com.github.jansowa.boardGame.domain.GameBoard;
+import com.github.jansowa.boardGame.mechanics.Move;
 
-public abstract class AI {
+public abstract class Bot {
 	private GameBoard board;
 	
-	public AI(GameBoard board){
+	public Bot(GameBoard board){
 		this.board = board;
 	}
 	

@@ -17,5 +17,5 @@ public abstract class Bot {
 		return this.board;
 	}
 	
-	abstract public Move nextAIMove();
+	abstract public Move nextBotMove();
 }

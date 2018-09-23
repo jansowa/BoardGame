@@ -1,7 +1,7 @@
-package com.github.jansowa.boardGame.ai;
+package com.github.jansowa.boardgame.ai;
 
-import com.github.jansowa.boardGame.domain.GameBoard;
-import com.github.jansowa.boardGame.mechanics.Move;
+import com.github.jansowa.boardgame.domain.GameBoard;
+import com.github.jansowa.boardgame.mechanics.Move;
 
 public abstract class Bot {
 	private GameBoard board;
@@ -17,5 +17,5 @@ public abstract class Bot {
 		return this.board;
 	}
 	
-	abstract public Move nextBotMove();
+	public abstract Move nextBotMove();
 }

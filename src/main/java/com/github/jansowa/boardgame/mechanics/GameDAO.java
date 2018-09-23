@@ -1,6 +1,6 @@
-package com.github.jansowa.boardGame.mechanics;
+package com.github.jansowa.boardgame.mechanics;
 
-import com.github.jansowa.boardGame.domain.GameBoard;
+import com.github.jansowa.boardgame.domain.GameBoard;
 
 public abstract class GameDAO {
 	public abstract GameBoard loadGame(String gameName);

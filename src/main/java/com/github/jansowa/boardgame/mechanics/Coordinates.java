@@ -1,4 +1,4 @@
-package com.github.jansowa.boardGame.mechanics;
+package com.github.jansowa.boardgame.mechanics;
 
 public class Coordinates {
 	private int y;
@@ -34,8 +34,7 @@ public class Coordinates {
 	}
 	
 	public int[] getCoordinates(){
-		int[] result = {this.y, this.x};
-		return result;
+		return new int[] {this.y, this.x};
 	}
 	public void setCoordinates(int y, int x){
 		this.y = y;
@@ -55,13 +54,11 @@ public class Coordinates {
 		if(obj==null){
 			return false;
 		}
-		Coordinates otherCoordinates = (Coordinates) obj;
-		if(this.x==otherCoordinates.x && this.y==otherCoordinates.y){
-			return true;
-		}
-		else{
+		if(this.getClass() != obj.getClass()){
 			return false;
 		}
+		Coordinates otherCoordinates = (Coordinates) obj;
+		return (this.x==otherCoordinates.x && this.y==otherCoordinates.y);
 	}
 	
 }

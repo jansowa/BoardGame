@@ -1,4 +1,4 @@
-package com.github.jansowa.boardGame.domain;
+package com.github.jansowa.boardgame.domain;
 
 import javax.persistence.MappedSuperclass;
 

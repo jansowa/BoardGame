@@ -1,4 +1,4 @@
-package com.github.jansowa.boardGame.mechanics;
+package com.github.jansowa.boardgame.mechanics;
 
 public class Move {
 	private Coordinates coordinates;
@@ -33,7 +33,7 @@ public class Move {
 			throw new IllegalArgumentException("Array length must equal two");
 		}
 		else{
-			
+			this.coordinates.setCoordinates(coord);
 		}
 	}
 	

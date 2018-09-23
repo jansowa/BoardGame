@@ -1,14 +1,15 @@
-package com.github.jansowa.boardGame.ai;
+package com.github.jansowa.boardgame.ai;
 
 import java.util.ArrayList;
+import java.util.List;
 
-import com.github.jansowa.boardGame.domain.GameBoard;
-import com.github.jansowa.boardGame.mechanics.BoardMechanics;
-import com.github.jansowa.boardGame.mechanics.Move;
+import com.github.jansowa.boardgame.domain.GameBoard;
+import com.github.jansowa.boardgame.mechanics.BoardMechanics;
+import com.github.jansowa.boardgame.mechanics.Move;
 
 public abstract class AlphaBetaPruningBot extends Bot {
-	public static final int bot = 0; //"O", maximizer
-	public static final int huPlayer = 1; //"X", minimizer
+	public static final int BOT = 0; //"O", maximizer
+	public static final int HUPLAYER = 1; //"X", minimizer
 	private int maxEvaluate = 10;
 	Evaluate evaluate;
 	BoardMechanics mechanics;
@@ -20,7 +21,7 @@ public abstract class AlphaBetaPruningBot extends Bot {
 		this.mechanics = mechanics;
 	}
 
-	public abstract ArrayList<Move> emptyIndexes(GameBoard board);
+	public abstract List<Move> emptyIndexes(GameBoard board);
 	
 	//undo given move
 	public abstract void undoMove(Move move);
@@ -44,19 +45,19 @@ public abstract class AlphaBetaPruningBot extends Bot {
 					return score+depth;
 				}
 				
-				ArrayList<Move> emptyFields = emptyIndexes(newBoard);
+				ArrayList<Move> emptyFields = (ArrayList<Move>) emptyIndexes(newBoard);
 
 				//Terminal state - no fields left and nobody won -> draw game
-				if(emptyFields.size()==0){
+				if(emptyFields.isEmpty()){
 					return 0;
 				}
 				
 				int best=0;
 				//maximizer move
-				if (player == bot){
+				if (player == BOT){
 					best = -10000;
 				}
-				else if(player == huPlayer){
+				else if(player == HUPLAYER){
 					best = 10000;
 				}
 				
@@ -64,34 +65,27 @@ public abstract class AlphaBetaPruningBot extends Bot {
 				//Try every possible moves
 				for(int i=0; i<emptyFields.size(); i++){
 					//Single Move
-					/*newBoard.getFields()[emptyFields.get(i).getCoordinates().getY()]
-							[emptyFields.get(i).getCoordinates().getX()]=player;*/
 					mechanics.changeBoard(emptyFields.get(i));
 					
 					//Call minimax for proper player
-					if(player==bot){
+					if(player==BOT){
 						best = Math.max(best,
-								minimaxAlphaBeta(newBoard, depth+1, huPlayer, alpha, beta));
+								minimaxAlphaBeta(newBoard, depth+1, HUPLAYER, alpha, beta));
 					}
 					else{//player==huPlayer
 						best = Math.min(best, 
-								minimaxAlphaBeta(newBoard, depth+1, bot, alpha, beta));
+								minimaxAlphaBeta(newBoard, depth+1, BOT, alpha, beta));
 					}
 					//Undo move
-					/*newBoard.getFields()[emptyFields.get(i).getCoordinates().getY()]
-							[emptyFields.get(i).getCoordinates().getX()]=-1;*/
 					undoMove(emptyFields.get(i));
-					if(player==bot){
+					if(player==BOT){
 						alpha = Math.max(alpha, best);
-						if(beta<=alpha){
-							break;
-						}
 					}
 					else{//player==huPlayer
 						beta = Math.min(beta, best);
-						if(beta<=alpha){
-							break;
-						}
+					}
+					if(beta<=alpha){
+						break;
 					}
 				}
 				return best;
@@ -101,7 +95,7 @@ public abstract class AlphaBetaPruningBot extends Bot {
 	public Move findBestMove(GameBoard board){
 		int bestScores = -1000;
 		Move bestMove = null;
-		ArrayList<Move> emptyFields = emptyIndexes(board);
+		ArrayList<Move> emptyFields = (ArrayList<Move>) emptyIndexes(board);
 		int size = emptyFields.size();
 
 		//Try all possible moves

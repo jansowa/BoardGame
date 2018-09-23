@@ -1,6 +1,6 @@
-package com.github.jansowa.boardGame.mechanics;
+package com.github.jansowa.boardgame.mechanics;
 
-import com.github.jansowa.boardGame.domain.GameBoard;
+import com.github.jansowa.boardgame.domain.GameBoard;
 
 public abstract class BoardMechanics {
 	private GameBoard board;
@@ -32,7 +32,7 @@ public abstract class BoardMechanics {
 			changeBoard(move);
 		}
 		return isGameOver();
-	};
+	}
 
 	//function makes changes on board of single move
 	public abstract void changeBoard(Move move);

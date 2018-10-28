@@ -1,24 +1,17 @@
 package com.github.jansowa.boardgame.mechanics;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
 import com.github.jansowa.boardgame.domain.GameBoard;
 
+@Data
+@AllArgsConstructor
 public abstract class BoardMechanics {
 	private GameBoard board;
 	
 	public BoardMechanics(){
 		this.board = null;
-	}
-	
-	public BoardMechanics(GameBoard board){
-		this.board = board;
-	}
-	
-	public void setBoard(GameBoard board){
-		this.board = board;
-	}
-	
-	public GameBoard getBoard(){
-		return board;
 	}
 	
 	//function counts empty fields

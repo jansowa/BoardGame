@@ -2,7 +2,9 @@ package com.github.jansowa.boardgame.domain;
 
 import javax.persistence.MappedSuperclass;
 
+import lombok.Data;
 
+@Data
 @MappedSuperclass
 public abstract class GameBoard implements Cloneable {
 	private String name;
@@ -22,38 +24,6 @@ public abstract class GameBoard implements Cloneable {
 		this.numberOfPlayers = numberOfPlayers;
 		this.player = player;
 		this.fields = null;
-	}
-	
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public int[][] getFields() {
-		return fields;
-	}
-
-	public void setFields(int[][] fields) {
-		this.fields = fields;
-	}
-
-	public int getNumberOfPlayers() {
-		return this.numberOfPlayers;
-	}
-
-	public void setNumberOfPlayers(int numberOfPlayers) {
-		this.numberOfPlayers = numberOfPlayers;
-	}
-
-	public int getPlayer() {
-		return this.player;
-	}
-
-	public void setPlayer(int player) {
-		this.player = player;
 	}
 	
 	@Override

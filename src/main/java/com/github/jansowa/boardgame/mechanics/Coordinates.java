@@ -1,13 +1,13 @@
 package com.github.jansowa.boardgame.mechanics;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
 public class Coordinates {
 	private int y;
 	private int x;
-	
-	public Coordinates(int y, int x){
-		this.y = y;
-		this.x = x;
-	}
 	
 	public Coordinates(int[] coord){
 		if(coord.length!=2){
@@ -17,20 +17,6 @@ public class Coordinates {
 			this.y = coord[0];
 			this.x = coord[1];
 		}
-	}
-	
-	public int getX(){
-		return this.x;
-	}
-	public void setX(int x){
-		this.x = x;
-	}
-	
-	public int getY(){
-		return this.y;
-	}
-	public void setY(int y){
-		this.y = y;
 	}
 	
 	public int[] getCoordinates(){

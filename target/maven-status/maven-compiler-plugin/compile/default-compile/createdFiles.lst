@@ -1,8 +1,10 @@
-com/github/jansowa/boardgame/ai/Bot.class
 com/github/jansowa/boardgame/ai/AlphaBetaPruningBot.class
+com/github/jansowa/boardgame/domain/BoardState.class
 com/github/jansowa/boardgame/mechanics/Coordinates.class
-com/github/jansowa/boardgame/mechanics/GameDAO.class
 com/github/jansowa/boardgame/mechanics/Move.class
+com/github/jansowa/boardgame/mechanics/GameUI.class
+com/github/jansowa/boardgame/ai/Bot.class
+com/github/jansowa/boardgame/mechanics/GameDAO.class
 com/github/jansowa/boardgame/ai/Evaluate.class
 com/github/jansowa/boardgame/controller/GameController.class
 com/github/jansowa/boardgame/mechanics/BoardMechanics.class
